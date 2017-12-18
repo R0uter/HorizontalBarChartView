@@ -1,0 +1,2 @@
+# HorizontalBarChartView
+HorizontalBarChartView for osx
