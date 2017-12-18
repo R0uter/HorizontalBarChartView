@@ -11,6 +11,9 @@
 		E974D3401FE7F81D001FDD03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974D33F1FE7F81D001FDD03 /* ViewController.swift */; };
 		E974D3421FE7F81D001FDD03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E974D3411FE7F81D001FDD03 /* Assets.xcassets */; };
 		E974D3451FE7F81D001FDD03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E974D3431FE7F81D001FDD03 /* Main.storyboard */; };
+		E974D34F1FE80099001FDD03 /* HBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974D34E1FE80099001FDD03 /* HBarChartView.swift */; };
+		E974D3511FE800BD001FDD03 /* HBarChartViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974D3501FE800BD001FDD03 /* HBarChartViewDataSource.swift */; };
+		E974D3531FE800DA001FDD03 /* HBarChartViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E974D3521FE800DA001FDD03 /* HBarChartViewDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		E974D3441FE7F81D001FDD03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E974D3461FE7F81D001FDD03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E974D3471FE7F81D001FDD03 /* HorizontalBarChartView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = HorizontalBarChartView.entitlements; sourceTree = "<group>"; };
+		E974D34E1FE80099001FDD03 /* HBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBarChartView.swift; sourceTree = "<group>"; };
+		E974D3501FE800BD001FDD03 /* HBarChartViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBarChartViewDataSource.swift; sourceTree = "<group>"; };
+		E974D3521FE800DA001FDD03 /* HBarChartViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HBarChartViewDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,7 @@
 		E974D33C1FE7F81D001FDD03 /* HorizontalBarChartView */ = {
 			isa = PBXGroup;
 			children = (
+				E974D34D1FE7FA4E001FDD03 /* HBarChartView */,
 				E974D33D1FE7F81D001FDD03 /* AppDelegate.swift */,
 				E974D33F1FE7F81D001FDD03 /* ViewController.swift */,
 				E974D3411FE7F81D001FDD03 /* Assets.xcassets */,
@@ -61,6 +68,16 @@
 				E974D3471FE7F81D001FDD03 /* HorizontalBarChartView.entitlements */,
 			);
 			path = HorizontalBarChartView;
+			sourceTree = "<group>";
+		};
+		E974D34D1FE7FA4E001FDD03 /* HBarChartView */ = {
+			isa = PBXGroup;
+			children = (
+				E974D34E1FE80099001FDD03 /* HBarChartView.swift */,
+				E974D3501FE800BD001FDD03 /* HBarChartViewDataSource.swift */,
+				E974D3521FE800DA001FDD03 /* HBarChartViewDelegate.swift */,
+			);
+			path = HBarChartView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -135,6 +152,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E974D3401FE7F81D001FDD03 /* ViewController.swift in Sources */,
+				E974D3511FE800BD001FDD03 /* HBarChartViewDataSource.swift in Sources */,
+				E974D3531FE800DA001FDD03 /* HBarChartViewDelegate.swift in Sources */,
+				E974D34F1FE80099001FDD03 /* HBarChartView.swift in Sources */,
 				E974D33E1FE7F81D001FDD03 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
