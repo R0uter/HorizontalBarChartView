@@ -65,6 +65,7 @@ class HBarChartView:NSView {
         barLabels.removeAll()
         barViews.removeAll()
         barValueLabels.removeAll()
+        backgroundBarViews.removeAll()
         
         let barNumbers = dataSource?.numberOfBars(self) ?? 0
         for i in 0..<barNumbers {
