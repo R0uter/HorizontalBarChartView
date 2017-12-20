@@ -11,6 +11,7 @@ import Cocoa
 class HBarChartView:NSView {
     weak var dataSource:HBarChartViewDataSource?
     weak var delegate:HBarChartViewDelegate?
+    private var rightPadding_:CGFloat = 80
     
     var barSpace:CGFloat = 5.0
     var autoBarWidth = true
@@ -68,6 +69,7 @@ class HBarChartView:NSView {
         backgroundBarViews.removeAll()
         
         let barNumbers = dataSource?.numberOfBars(self) ?? 0
+        var attValueString = NSAttributedString()
         for i in 0..<barNumbers {
             let newValue = CGFloat(dataSource?.hBarChartView(self, valueForBarAt: i) ?? 0)
             self.maxBarValue = maxBarValue < newValue ? newValue : maxBarValue
@@ -82,11 +84,15 @@ class HBarChartView:NSView {
             let barValueLabel = NSTextField()
             let attForValue = dataSource?.hBarChartView(self, attributeForValueLabel: i)
             let value = String(format: "%.2f", arguments: [dataSource?.hBarChartView(self, valueForBarAt: i) ?? 0.0])
+            let attString = NSAttributedString(string: value, attributes: attForValue)
             setLable(barValueLabel)
             barValueLabel.isEditable = false
             barValueLabel.isSelectable = false
-            barValueLabel.attributedStringValue = NSAttributedString(string: value, attributes: attForValue)
+            barValueLabel.attributedStringValue = attString
             barValueLabels.append(barValueLabel)
+            if attString.length > attValueString.length {
+                attValueString = attString
+            }
             let bar = NSView()
             bar.wantsLayer = true
             bar.layer?.backgroundColor = dataSource!.hBarChartView(self, colorForBarAt: i).cgColor
@@ -98,6 +104,8 @@ class HBarChartView:NSView {
             bgBar.layer?.cornerRadius = barCornerRadius
             backgroundBarViews.append(bgBar)
         }
+        self.rightPadding_ = attValueString.size().width + 30
+        print(rightPadding_)
     }
     
     private func layoutBars() {
@@ -145,7 +153,7 @@ class HBarChartView:NSView {
 }
 extension HBarChartView {
     var leftPadding:CGFloat {return 8}
-    var rightPadding:CGFloat {return 80}
+    var rightPadding:CGFloat {return rightPadding_}
     var topPadding:CGFloat {return 8}
     var bottomPadding:CGFloat {return 8}
 }
