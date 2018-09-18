@@ -105,7 +105,6 @@ class HBarChartView:NSView {
             backgroundBarViews.append(bgBar)
         }
         self.rightPadding_ = attValueString.size().width + 30
-        print(rightPadding_)
     }
     
     private func layoutBars() {
